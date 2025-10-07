@@ -1,0 +1,187 @@
+/* Game Wrapper Layout */
+.game-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  padding: 20px;
+}
+
+/* Game Header */
+.game-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.game-title {
+  font-size: 48px;
+  color: white;
+  margin: 0 0 20px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+}
+
+/* View Toggle Buttons */
+.view-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.toggle-btn {
+  padding: 12px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border: 3px solid #667eea;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.toggle-btn:hover {
+  background: rgba(102, 126, 234, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.toggle-btn.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-color: white;
+  transform: scale(1.05);
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.6);
+}
+
+/* Content Area */
+.content-area {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Game View */
+.game-view {
+  text-align: center;
+}
+
+.game-instructions {
+  font-size: 18px;
+  color: white;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+#phaser-game-container {
+  display: inline-block;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Worksheet View */
+.worksheet-view {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation Footer */
+.navigation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 30px auto 0;
+  padding: 20px;
+}
+
+.back-button {
+  display: inline-block;
+  padding: 12px 25px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  font-weight: bold;
+  transition: all 0.3s ease;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: white;
+  transform: translateX(-5px);
+}
+
+.game-stats {
+  color: white;
+  font-size: 16px;
+  padding: 12px 25px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .game-title {
+    font-size: 36px;
+  }
+  
+  .toggle-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  #phaser-game-container canvas {
+    max-width: 100%;
+    height: auto !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-wrapper {
+    padding: 10px;
+  }
+  
+  .game-title {
+    font-size: 28px;
+  }
+  
+  .view-toggle {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .toggle-btn {
+    width: 100%;
+  }
+  
+  .navigation-footer {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .back-button,
+  .game-stats {
+    width: 100%;
+    text-align: center;
+  }
+}

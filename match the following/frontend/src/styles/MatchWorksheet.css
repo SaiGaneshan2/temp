@@ -1,0 +1,237 @@
+/* Worksheet Container */
+.worksheet-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Header */
+.worksheet-header {
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+}
+
+.worksheet-header h2 {
+  font-size: 32px;
+  margin: 0 0 10px 0;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.worksheet-instructions {
+  font-size: 16px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* No Data Message */
+.no-data {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  padding: 40px;
+}
+
+/* Worksheet Content - Two Column Layout */
+.worksheet-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+  position: relative;
+  min-height: 400px;
+}
+
+/* Canvas for drawing lines */
+.drawing-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Column Styling */
+.worksheet-column {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 10;
+}
+
+.column-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #667eea;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #667eea;
+  text-align: center;
+}
+
+/* Items List */
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Individual Item */
+.worksheet-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 15px;
+  background: white;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.worksheet-item:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+  transform: translateX(5px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+/* Item Number/Letter */
+.item-number,
+.item-letter {
+  font-weight: bold;
+  font-size: 18px;
+  color: #667eea;
+  min-width: 35px;
+  margin-right: 12px;
+}
+
+/* Item Text */
+.item-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.5;
+  flex: 1;
+}
+
+/* Term Items - Blue accent */
+.term-item {
+  border-left: 4px solid #667eea;
+}
+
+.term-item:hover {
+  border-left-color: #5568d3;
+}
+
+/* Definition Items - Purple accent */
+.definition-item {
+  border-right: 4px solid #764ba2;
+}
+
+.definition-item:hover {
+  border-right-color: #653a91;
+}
+
+/* Active/Selected state */
+.worksheet-item.selected {
+  background: #667eea;
+  border-color: #667eea;
+  color: white;
+  transform: scale(1.02);
+}
+
+.worksheet-item.selected .item-number,
+.worksheet-item.selected .item-letter,
+.worksheet-item.selected .item-text {
+  color: white;
+}
+
+/* Footer with buttons */
+.worksheet-footer {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Buttons */
+.check-answers-btn,
+.clear-lines-btn {
+  padding: 12px 30px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.check-answers-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.check-answers-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.clear-lines-btn {
+  background: white;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.clear-lines-btn:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .worksheet-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .worksheet-header h2 {
+    font-size: 24px;
+  }
+  
+  .worksheet-item {
+    padding: 12px;
+  }
+  
+  .item-text {
+    font-size: 14px;
+  }
+  
+  /* Hide canvas on mobile for better UX */
+  .drawing-canvas {
+    display: none;
+  }
+}
+
+/* Canvas for drawing lines (will be added later) */
+.drawing-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10;
+}
